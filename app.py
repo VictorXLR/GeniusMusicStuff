@@ -16,8 +16,8 @@ USER_ENDPOINT = "api.genius.com/account"
 base_url = "http://api.genius.com"
 headers = {"Authorization": f"Bearer {GENIUS_ACCESS_TOKEN}"}
 
-song_title = "ONE WATCH"
-artist_name = "Gunna"
+song_title = "Cash Only"
+artist_name = "Blac Chyna & Trippie Redd"
 
 
 def lyrics_from_song_api_path(song_api_path):
@@ -42,6 +42,7 @@ if __name__ == "__main__":
     song_info = None
     for hit in json["response"]["hits"]:
         hit_artist_name = hit["result"]["primary_artist"]["name"]
+        print(hit_artist_name)
         if hit_artist_name.upper() == artist_name.upper():
             song_info = hit
             break
